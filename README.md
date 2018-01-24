@@ -8,7 +8,6 @@ Required: Git, npm
 2. Run npm:
 
     # npm install
-	# npm install --save isomorphic-fetch@2.2.1 react-router@2.5.2
 
 3. Run the built-in web server
 
