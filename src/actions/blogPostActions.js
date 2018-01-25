@@ -1,9 +1,9 @@
 import fetch from 'isomorphic-fetch';
 
-var ROOT_URL = 'http://192.168.0.100:8000/posts';
+var API_URL = 'http://192.168.0.100:8000/posts';
 
 export function fetchBlogPosts() {
-    return fetch(ROOT_URL, {
+    return fetch(API_URL, {
         method: 'GET',
         mode: 'CORS'
     }).then(res => res.json())
@@ -11,7 +11,7 @@ export function fetchBlogPosts() {
 }
 
 export function fetchBlogPost(id) {
-    return fetch(ROOT_URL + '/' + id, {
+    return fetch(API_URL + '/' + id, {
         method: 'GET',
         mode: 'CORS'
     }).then(res => res.json())
@@ -19,7 +19,7 @@ export function fetchBlogPost(id) {
 }
 
 export function createBlogPost(data) {
-    return fetch(ROOT_URL, {
+    return fetch(API_URL, {
         method: 'POST',
         mode: 'CORS',
         body: JSON.stringify(data),
@@ -32,7 +32,7 @@ export function createBlogPost(data) {
 }
 
 export function updateBlogPost(id, data) {
-    return fetch(ROOT_URL + '/' + id, {
+    return fetch(API_URL + '/' + id, {
         method: 'PUT',
         mode: 'CORS',
         body: JSON.stringify(data),
@@ -45,7 +45,7 @@ export function updateBlogPost(id, data) {
 }
 
 export function deleteBlogPost(id) {
-    return fetch(ROOT_URL + '/' + id, {
+    return fetch(API_URL + '/' + id, {
         method: 'DELETE',
         mode: 'CORS'
     }).then(res => {
